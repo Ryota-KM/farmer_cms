@@ -1,4 +1,4 @@
-<?php require_once(dirname(__DIR__).'/header.php') ?>
+<?php require_once(dirname(__DIR__).'/view/shared/header.php') ?>
 
   <div class="content">
     <div class="content-wrapper">
@@ -18,4 +18,4 @@
      </div>
    </div>
 
-<?php require(dirname(__DIR__).'/footer.php') ?>
+<?php require(dirname(__DIR__).'/view/shared/footer.php') ?>

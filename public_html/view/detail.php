@@ -1,4 +1,4 @@
-<?php require_once(dirname(__DIR__).'/header.php') ?>
+<?php require_once(dirname(__DIR__).'/view/shared/header.php') ?>
 
 <div class="content">
   <?php foreach ($product as $productDetail): ?>
@@ -34,4 +34,4 @@
   <?php endforeach ?>
 </div>
 
-<?php require_once(dirname(__DIR__).'/footer.php') ?>
+<?php require_once(dirname(__DIR__).'/view/shared/footer.php') ?>

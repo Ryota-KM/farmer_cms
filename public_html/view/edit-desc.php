@@ -1,4 +1,4 @@
-<?php require_once(dirname(__DIR__).'/edit-header.php') ?>
+<?php require_once(dirname(__DIR__).'/view/shared/edit-header.php') ?>
 
   <div class="container">
     <p><?php echo $message ?></p>

@@ -1,4 +1,4 @@
-<?php require_once(dirname(__DIR__).'/header.php') ?>
+<?php require_once(dirname(__DIR__).'/view/shared/header.php') ?>
 
     <div class="content">
       <?php foreach ($products as $product): ?>
@@ -20,4 +20,4 @@
     <?php if ($hasPrevious): ?>
       <a class="btn previous-btn orange-btn" href="index.php?page=<?php echo ($page -1) ?>"><< 前のページ</a>
     <?php endif ?>
-<?php require_once(dirname(__DIR__).'/footer.php') ?>
+<?php require_once(dirname(__DIR__).'/view/shared/footer.php') ?>
