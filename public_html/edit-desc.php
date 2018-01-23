@@ -1,4 +1,6 @@
 <?php
+  require_once(dirname(__DIR__).'/public_html/database.php');
+
   $name = trim($_REQUEST['name']);
   $price = trim($_REQUEST['price']);
   $comment = trim($_REQUEST['comment']);
@@ -11,7 +13,6 @@
   if ($validated === true):
 
     if (isset($_REQUEST['newProduct'])) {
-      require_once(dirname(__DIR__).'/public_html/database.php');
       $insert = new PDO('mysql:host='.DB_HOST.'; dbname='.DB_NAME.'; charset=utf8', DB_USER, DB_PASSWORD);
       $sqlInsert = $insert->prepare('insert into product value (null, ?,?,?,?,?)');
       $sqlInsert->execute([$name, $comment,
@@ -27,7 +28,6 @@
     }
 
     if (isset($_REQUEST['updateProduct'])) {
-      require_once(dirname(__DIR__).'/public_html/database.php');
       $update = new PDO('mysql:host='.DB_HOST.'; dbname='.DB_NAME.'; charset=utf8', DB_USER, DB_PASSWORD);
       $sqlUpdate = $update->prepare('update product set name=?, comment=?, quantity=?, unit=?, price=? where id=?');
       $sqlUpdate->execute([$name, $comment,
@@ -44,7 +44,6 @@
     }
 
     if (isset($_REQUEST['deleteProduct'])) {
-      require_once(dirname(__DIR__).'/public_html/database.php');
       $delete = new PDO('mysql:host='.DB_HOST.'; dbname='.DB_NAME.'; charset=utf8', DB_USER, DB_PASSWORD);
       $sqldelete = $delete->prepare('delete from product where id=?');
       $sqldelete->execute([$_REQUEST['id']]);
@@ -57,7 +56,6 @@
     $message = '';
   }
 
-  require_once(dirname(__DIR__).'/public_html/database.php');
   $pdo = new PDO('mysql:host='.DB_HOST.'; dbname='.DB_NAME.'; charset=utf8', DB_USER, DB_PASSWORD);
   $sql = $pdo->query('select * from product order by id desc');
   $items = $sql->fetchAll();
