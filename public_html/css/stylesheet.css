@@ -456,8 +456,8 @@ footer {
   left: 1%;
   right: 1%;
   -ms-transform: translateY(-50%);
--webkit-transform : translateY(-50%);
-transform : translateY(-50%);
+  -webkit-transform : translateY(-50%);
+  transform : translateY(-50%);
 }
 
 .discription {
