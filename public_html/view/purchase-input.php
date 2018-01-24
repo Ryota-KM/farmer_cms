@@ -3,7 +3,7 @@
   <div class="content">
     <div class="content-wrapper">
       <?php echo $message ?>
-      <?php if($show == true): ?>
+      <?php if ($show == true): ?>
         <?php foreach ($_SESSION['product'] as $id=>$product): ?>
           <table>
             <th>商品名</th><th>価格</th><th>単位</th><th>数量</th><th>小計</th><th>取消</th>

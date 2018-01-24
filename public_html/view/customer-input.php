@@ -26,7 +26,7 @@
           </tr>
         </table>
 
-        <?php if(isset($_SESSION['customer'])): ?>
+        <?php if (isset($_SESSION['customer'])): ?>
           <p><input class="btn std-btn" type="submit" value="内容を変更する"></p>
         <?php else: ?>
           <p><input class="btn std-btn" type="submit" value="登録してログイン"></p>
