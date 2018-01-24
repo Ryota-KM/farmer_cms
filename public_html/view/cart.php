@@ -8,7 +8,7 @@
             <?php $total=0 ?>
             <?php foreach ($_SESSION['product'] as $id=>$product): ?>
               <tr>
-                <td><a class="font-size-static" href="detail.php?id='.$id. '"><?php echo $product['name'] ?></a></td>
+                <td><a class="font-size-static" href="detail.php?id=<?php echo $id ?>"><?php echo $product['name'] ?></a></td>
                 <td><?php echo $product['price'] ?>円</td>
                 <td><?php echo $product['quantity'].$product['unit'] ?></td>
                 <td class="td-centering"><?php echo $product['count'] ?></td>
@@ -17,7 +17,7 @@
                    $total += $subtotal;
                   ?>
                 <td><?php echo $subtotal ?>円</td>
-                <td><a class="font-size-static" href="cart-delete.php?id='.$id. '">削除</a></td>
+                <td><a class="font-size-static" href="cart-delete.php?id=<?php echo $id ?>">削除</a></td>
               </tr>
             <?php endforeach ?>
           <tr><td class="td-centering" colspan="4">合計金額</td><td><?php echo $total ?>円</td></tr>
