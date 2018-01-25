@@ -21,7 +21,7 @@
       </div>
       <div class="section section-third">
         <ul>
-          <li><a href="https://rebooooot.com">生産者ブログ</a></li>
+          <li><a href="https://rebooooot.com" target="blank">生産者ブログ</a></li>
         </ul>
       </div>
     </div>
