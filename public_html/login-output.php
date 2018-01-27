@@ -17,4 +17,5 @@
       ];
   endforeach;
 
+$customerName = $_SESSION['customer']['name'];
 require_once(dirname(__DIR__).'/public_html/view/login-output.php');
