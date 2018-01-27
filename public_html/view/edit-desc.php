@@ -1,4 +1,7 @@
-<?php require_once(dirname(__DIR__).'/view/shared/edit-header.php') ?>
+<?php
+  require_once(dirname(__DIR__).'/view/shared/edit-header.php');
+  require_once '../public_html/functions.php';
+?>
 
   <div class="container">
     <p><?php echo $message ?></p>
@@ -43,10 +46,10 @@
           <p><input type="hidden" name="id", value="<?php echo $item['id'] ?>">
             <input type="hidden" name="updateProduct">
           商品名(9文字まで) :
-            <input type="text" class="productName" name="name" value="<?php echo $item['name'] ?>"
+            <input type="text" class="productName" name="name" value="<?php echo h($item['name']) ?>"
               maxlength="9" required>
           <span>販売単位 :
-            <input type="text" class="Quantity" name="quantity" value="<?php echo $item['quantity'] ?>"
+            <input type="text" class="Quantity" name="quantity" value="<?php echo h($item['quantity']) ?>"
               required></span><span>
           <select name="unit" value="<?php echo $item['unit'] ?>">
             <span><option value="<?php echo $item['unit'] ?>"><?php echo $item['unit'] ?></option>
@@ -57,14 +60,14 @@
                 <option value="㎏">㎏</option>
             </select></span>
           <span>価格 :
-            <input type="text" class="price" name="price" value="<?php echo $item['price'] ?>"
+            <input type="text" class="price" name="price" value="<?php echo h($item['price']) ?>"
               maxlength="5" required> 円</span>
           <span>写真 :
             <input type="file" id="file-num<?php echo $n ?>" class="file" name="file"></span></p>
           <div class="comment">
             <p>コメント : </br>(200字まで)</p>
           </div>
-            <p><textarea maxlength="200" class="table rows="4" cols="50" name="comment" required><?php echo $item['comment'] ?></textarea></p>
+            <p><textarea maxlength="200" class="table rows="4" cols="50" name="comment" required><?php echo h($item['comment']) ?></textarea></p>
           <img id="img-num<?php echo $n ?>" class="image" src="image/<?php echo $item['name'] ?>.png">
           <p><input class="btn btn-update" type="submit" value="更新する"></p>
         </form>
