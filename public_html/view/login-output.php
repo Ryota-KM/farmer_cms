@@ -1,10 +1,13 @@
-<?php require_once(dirname(__DIR__).'/view/shared/header.php') ?>
+<?php
+  require_once(dirname(__DIR__).'/view/shared/header.php');
+  require_once '../public_html/functions.php';
+?>
 
   <div class="content">
     <div class="content-wrapper">
 
-      <?php if (isset($_SESSION['customer'])): ?>
-        <p>いらっしゃいませ、<?php echo $_SESSION['customer']['name'] ?>さん。</p>
+      <?php if (isset($customerName)): ?>
+        <p>いらっしゃいませ、<?php echo h($customerName) ?>さん。</p>
       <?php else : ?>
         <p>ログイン名またはパスワードが違います。</p>
         <form "onsubmit="return false;" action="login-output.php" method="post">

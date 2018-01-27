@@ -1,4 +1,7 @@
-<?php require_once(dirname(__DIR__).'/view/shared/header.php') ?>
+<?php
+  require_once(dirname(__DIR__).'/view/shared/header.php');
+  require_once '../public_html/functions.php';
+?>
 
   <div class="content">
     <div class="content-wrapper">
@@ -8,9 +11,9 @@
             <?php $total=0 ?>
             <?php foreach ($_SESSION['product'] as $id=>$product): ?>
               <tr>
-                <td><a class="font-size-static" href="detail.php?id=<?php echo $id ?>"><?php echo $product['name'] ?></a></td>
-                <td><?php echo $product['price'] ?>円</td>
-                <td><?php echo $product['quantity'].$product['unit'] ?></td>
+                <td><a class="font-size-static" href="detail.php?id=<?php echo $id ?>"><?php echo h($product['name']) ?></a></td>
+                <td><?php echo h($product['price']) ?>円</td>
+                <td><?php echo h($product['quantity'].$product['unit']) ?></td>
                 <td class="td-centering"><?php echo $product['count'] ?></td>
                   <?php
                    $subtotal = $product['price'] * $product['count'];

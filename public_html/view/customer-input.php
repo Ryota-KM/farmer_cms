@@ -1,4 +1,7 @@
-<?php require_once(dirname(__DIR__).'/view/shared/header.php') ?>
+<?php
+  require_once(dirname(__DIR__).'/view/shared/header.php');
+  require_once '../public_html/functions.php';
+?>
 
   <div class="content">
     <div class="content-wrapper">
@@ -10,7 +13,7 @@
         <table>
           <tr>
             <td class="td-centering">お名前 : </td>
-            <td><input class="customer-input" type="text" name="name" value="<?php echo $name ?>" required></td>
+            <td><input class="customer-input" type="text" name="name" value="<?php echo h($name) ?>" required></td>
           </tr>
           <tr>
             <td class="td-centering">ご住所 : </td>
@@ -18,15 +21,15 @@
           </tr>
           <tr>
             <td>ログイン名 : </td>
-            <td><input class="customer-input" type="text" name="login" value="<?php echo $login ?>"required></td>
+            <td><input class="customer-input" type="text" name="login" value="<?php echo h($login) ?>"required></td>
           </tr>
           <tr>
             <td>パスワード : </td>
-            <td><input class="customer-input" type="password" name="password" value="<?php echo $password ?>"required></td>
+            <td><input class="customer-input" type="password" name="password" value="<?php echo h($password) ?>"required></td>
           </tr>
         </table>
 
-        <?php if (isset($_SESSION['customer'])): ?>
+        <?php if(isset($_SESSION['customer'])): ?>
           <p><input class="btn std-btn" type="submit" value="内容を変更する"></p>
         <?php else: ?>
           <p><input class="btn std-btn" type="submit" value="登録してログイン"></p>

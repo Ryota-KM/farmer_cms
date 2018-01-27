@@ -1,17 +1,20 @@
-<?php require_once(dirname(__DIR__).'/view/shared/header.php') ?>
+<?php
+  require_once(dirname(__DIR__).'/view/shared/header.php');
+  require_once '../public_html/functions.php';
+ ?>
 
   <div class="content">
     <div class="content-wrapper">
       <?php echo $message ?>
-      <?php if ($show == true): ?>
+      <?php if($show == true): ?>
         <?php foreach ($_SESSION['product'] as $id=>$product): ?>
           <table>
             <th>商品名</th><th>価格</th><th>単位</th><th>数量</th><th>小計</th><th>取消</th>
             <tr>
               <td><a class="font-size-static" href="detail.php?id=<?php echo $id ?>">
-                <?php echo $product['name'] ?></a></td>
-              <td><?php echo $product['price'] ?>円</td>
-              <td><?php echo $product['quantity'].$product['unit'] ?></td>
+                <?php echo h($product['name']) ?></a></td>
+              <td><?php echo h($product['price']) ?>円</td>
+              <td><?php echo h($product['quantity'].$product['unit']) ?></td>
               <td class="td-centering"><?php echo $product['count'] ?></td>
                 <?php
                   $subtotal = $product['price'] * $product['count'];
