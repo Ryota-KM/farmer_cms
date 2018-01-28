@@ -1,6 +1,10 @@
 <?php
   require_once(dirname(__DIR__).'/public_html/database.php');
   session_start();
+
+  $token = sha1(uniqid(mt_rand(), true));
+  $_SESSION['token'] = $token;
+
   $total=0;
   $show = true;
 

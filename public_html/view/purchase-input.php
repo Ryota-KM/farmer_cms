@@ -28,7 +28,10 @@
             </tr>
           </table>
           <p>内容をご確認いただき、購入を確定してください。</p>
-          <a class="btn imp-btn" href="purchase-output.php">購入を確定する</a>
+          <form action="http://r-portfolio.xyz/purchase-output.php" method="post">
+            <input type="hidden" name="token" value="<?php echo $token ?>">
+            <input class="btn imp-btn" type="submit" value="購入を確定する">
+          </form>
         <?php endforeach ?>
       <?php endif ?>
     </div>
