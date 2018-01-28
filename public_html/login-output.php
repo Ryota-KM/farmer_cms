@@ -3,6 +3,10 @@
   $pdo = new PDO('mysql:host='.DB_HOST.'; dbname='.DB_NAME.'; charset=utf8', DB_USER, DB_PASSWORD);
   session_start();
 
+  if (!isset($_POST['token']) || $_POST['token'] !== $_SESSION['token']) {
+    die('不正なアクセスが行われました');
+  }
+
   $sql = $pdo->prepare('select * from customer where login=? and password=?');
   $sql->execute([$_REQUEST['login'], $_REQUEST['password']]);
 

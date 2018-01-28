@@ -14,6 +14,7 @@
       <p>パスワード : <input type="password" name="password" required></p>
       <br>
       <p><input class="std-btn btn" type="submit" value="ログインする"></p>
+      <input type="hidden" name="token" value="<?php echo $token ?>">
     </form>
   </div>
 </div>
