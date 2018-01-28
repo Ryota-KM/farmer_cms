@@ -13,7 +13,7 @@
         <a class="tool-bar-right" href="customer-input.php">会員登録(変更)</a>
       </div>
       <div class="wrapper">
-        <img class="logo"src="/material/logo.png">
+        <a href="http://r-portfolio.xyz/index.php"><img class="logo"src="/material/logo.png"></a>
         <div class="menu">
           <a class="menu-left" href="http://r-portfolio.xyz/index.php">作物一覧</a>
           <a class="menu-center" href="cart.php">カート</a>
