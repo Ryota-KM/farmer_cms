@@ -74,7 +74,7 @@
         <form "onsubmit="return false;" action="edit-desc.php" method="post">
           <input type="hidden" name="id", value="<?php echo $item['id'] ?>">
           <input type="hidden" name="deleteProduct">
-          <p><input class="btn btn-delete" type="submit" value="削除する"></p>
+          <p><input class="btn btn-delete" type="submit" value="削除する" onclick='return confirm("本当に削除しますか？");'></p>
         </form>
       </div>
     </div>
