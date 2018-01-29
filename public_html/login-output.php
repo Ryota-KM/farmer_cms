@@ -6,7 +6,7 @@
   if (!isset($_POST['token']) || $_POST['token'] !== $_SESSION['token']) {
     die('不正なアクセスが行われました');
   }
-
+  $token = $_REQUEST['token'];
   $sql = $pdo->prepare('select * from customer where login=? and password=?');
   $sql->execute([$_REQUEST['login'], $_REQUEST['password']]);
 
