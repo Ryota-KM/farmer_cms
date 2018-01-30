@@ -14,7 +14,7 @@
     } elseif ($commentLen >= 176) {
         echo 'long';
     } elseif ($commentLen >= 20) {
-        echo 'discription';
+        echo 'description';
     } else {
         echo '';
     }
