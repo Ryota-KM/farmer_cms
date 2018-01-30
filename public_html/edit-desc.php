@@ -1,5 +1,6 @@
 <?php
   require_once(dirname(__DIR__).'/public_html/database.php');
+  require_once(dirname(__DIR__).'/public_html/functions.php');
 
   $name = trim($_REQUEST['name']);
   $price = trim($_REQUEST['price']);
