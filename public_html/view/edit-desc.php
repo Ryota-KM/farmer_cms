@@ -38,7 +38,12 @@
 
   <?php foreach ($items as $item): $n++ ?>
     <div class="container">
-      <div class="wrapper">
+      <?php if ($n == 1): ?>
+        <div class="wrapper wrapper-first">
+          <h1>登録済み商品一覧</h1>
+      <?php else: ?>
+        <div class="wrapper">
+      <?php endif ?>
         <form "onsubmit="return false;" action="edit-desc.php" method="post" enctype="multipart/form-data">
           <p><input type="hidden" name="id", value="<?php echo $item['id'] ?>">
             <input type="hidden" name="updateProduct">

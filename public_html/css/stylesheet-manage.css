@@ -43,6 +43,7 @@ select[name=updateUnit] {
   box-shadow: 1px 3px 2px #000000;
 }
 
+
 span {
   margin: 5px 8px;
 }
@@ -62,14 +63,22 @@ body {
   height: 220px;
   border: 1px solid #ffffff;
   background-color: #fdf5e6;
+  /*text-align: center;*/
   margin: auto auto ;
   padding-bottom : 14px;
+}
+
+.wrapper-first {
+  height: 271px;
+  padding-top: 11px;
+
 }
 
 .wrapper-new {
   width: 960px;
   height: 285px;
   background-color: #fff0f5;
+  /*text-align: center;*/
   margin:  0px auto 19px;
   vertical-align: middle;
   padding-top: 11px;
@@ -87,7 +96,7 @@ body {
   font-size: 18px;
   padding: 0px 15px;
 }
-
+/*width: 660px;*/
 .table {
   display: inline-block;
   float: left;
@@ -125,7 +134,7 @@ body {
 .confirm {
   display: inline-block;
   width: 300px;
-  margin: 0 auto 20px;
+  margin: 0 auto;
 }
 
 .btn {
