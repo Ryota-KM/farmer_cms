@@ -305,6 +305,10 @@ body {
   box-shadow: 0px 7px 3px -3px #004810;
 }
 
+.detail-content {
+  display: none;
+}
+
 .content-wrapper {
   height: 428px;
   width: 915px;
@@ -497,8 +501,4 @@ transform : translateY(-50%);
 
 .active {
   display: block;
-}
-
-.content {
-  display: none;
 }

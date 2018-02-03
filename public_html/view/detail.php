@@ -5,7 +5,7 @@
 <div class="contents">
 
 <?php foreach ($products as $productDetail): ?>
-  <div class="content" id="idNum<?php echo $productDetail['id'] ?>">
+  <div class="detail-content" id="idNum<?php echo $productDetail['id'] ?>">
 
     <div class="detail-image">
       <img class="change-prev-btn change-product" src="/material/navigate-left.png">
