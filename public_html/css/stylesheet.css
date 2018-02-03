@@ -14,7 +14,6 @@ p {
 }
 
 img {
-  vertical-align: bottom;
   margin: 0;
   padding: 0;
 }
@@ -221,6 +220,20 @@ body {
   color: #ffe6d4;
 }
 
+.change-prev-btn {
+  width: 64px;
+  height: 64px;
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+.change-next-btn {
+  width: 64px;
+  height: 64px;
+  margin-left: 15px;
+  cursor: pointer;
+}
+
 /*ボタンモジュールここまで*/
 
 .tool-bar {
@@ -272,7 +285,7 @@ body {
   width: 959px;
   margin: 0px auto 61px;
   text-align: right;
-  vertical-align: bottom;
+
 }
 
 .wrapper {
@@ -281,7 +294,7 @@ body {
   margin-top: -15px;
 }
 
-.content {
+.contents {
   float:left;
   height: 643px;
   width: 955px;
@@ -422,7 +435,9 @@ footer {
 }
 
 .detail-image{
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   float: left;
   height: 477px;
   width: 477px;
@@ -431,12 +446,11 @@ footer {
   text-align: center;
 }
 
-.detail-image img {
-  height: 340px;
-  width: 340px;
+.product-image {
+  height: 300px;
+  width: 300px;
   box-shadow: 3px 3px 3px #888888;
   object-fit: cover;
-  margin-top: 68px;
   border: 1px solid #dddddd;
 }
 
@@ -456,8 +470,8 @@ footer {
   left: 1%;
   right: 1%;
   -ms-transform: translateY(-50%);
-  -webkit-transform : translateY(-50%);
-  transform : translateY(-50%);
+-webkit-transform : translateY(-50%);
+transform : translateY(-50%);
 }
 
 .description {
@@ -479,4 +493,12 @@ footer {
 
 .long {
   font-size: 16px;
+}
+
+.active {
+  display: block;
+}
+
+.content {
+  display: none;
 }

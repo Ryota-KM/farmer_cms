@@ -2,11 +2,15 @@
   require_once(dirname(__DIR__).'/view/shared/header.php');
   require_once '../public_html/functions.php';
 ?>
+<div class="contents">
 
-<div class="content">
-  <?php foreach ($product as $productDetail): ?>
+<?php foreach ($products as $productDetail): ?>
+  <div class="content" id="idNum<?php echo $productDetail['id'] ?>">
+
     <div class="detail-image">
-      <img src="image/<?php echo h($productDetail['name']) ?>.png">
+      <img class="change-prev-btn change-product" src="/material/navigate-left.png">
+      <img class="product-image" src="image/<?php echo h($productDetail['name']) ?>.png">
+      <img class="change-next-btn change-product" src="/material/navigate-right.png">
     </div>
 
     <div class="detail-info">
@@ -34,7 +38,8 @@
       </div>
     </div>
 
-  <?php endforeach ?>
+  </div>
+<?php endforeach ?>
 </div>
 
 <?php require_once(dirname(__DIR__).'/view/shared/footer.php') ?>

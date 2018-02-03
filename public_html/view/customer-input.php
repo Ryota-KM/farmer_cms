@@ -3,7 +3,7 @@
   require_once '../public_html/functions.php';
 ?>
 
-  <div class="content">
+  <div class="contents">
     <div class="content-wrapper">
       <p>ご登録、または変更に必要な情報を入力してください。</p>
       <p>ログイン名、パスワードに使える文字は半角英数字(大小)のみです。</p>

@@ -3,7 +3,7 @@
   require_once '../public_html/functions.php';
 ?>
 
-    <div class="content">
+    <div class="contents">
       <?php foreach ($products as $product): ?>
         <div class="content-columns">
           <div class="product">

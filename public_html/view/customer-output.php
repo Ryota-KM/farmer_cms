@@ -1,6 +1,6 @@
 <?php require_once(dirname(__DIR__).'/view/shared/header.php') ?>
 
-<div class="content">
+<div class="contents">
   <div class="content-wrapper">
     <?php if ($validated): ?>
       <p>入力した内容に不適切な文字が含まれるため登録できませんでした。</p>

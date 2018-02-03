@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <title>産地直送ぐんま農園公式ホームページ</title>
     <link rel="stylesheet" href="/css/stylesheet.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/change-product.js"></script>
   </head>
   <body>
     <div class="container">

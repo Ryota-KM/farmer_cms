@@ -3,7 +3,7 @@
   require_once '../public_html/functions.php';
  ?>
 
-  <div class="content">
+  <div class="contents">
     <div class="content-wrapper">
       <?php echo $message ?>
       <?php if($show == true): ?>
