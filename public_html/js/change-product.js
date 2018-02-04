@@ -29,3 +29,17 @@ $(function(){
         }
      });
 });
+
+$(function(){
+  $('.change-prev-btn').hover(function(){
+    $(this).attr('src','/material/navigate-left-hover.svg')
+  },function(){
+    $(this).attr('src','/material/navigate-left.svg')
+  });
+
+  $('.change-next-btn').hover(function(){
+    $(this).attr('src','/material/navigate-right-hover.svg')
+  },function(){
+    $(this).attr('src','/material/navigate-right.svg')
+  });
+});
