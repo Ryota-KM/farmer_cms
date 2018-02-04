@@ -26,7 +26,7 @@
           <tr><td class="td-centering" colspan="4">合計金額</td><td><?php echo $total ?>円</td></tr>
         </table>
       <?php else: ?>
-        <?php echo 'カートに商品がありません' ?>
+        <?php echo '<p>カートに商品がありません</p>' ?>
       <?php endif ?>
     </div>
   </div>
