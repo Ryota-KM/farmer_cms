@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="50">
+    <defs>
+        <linearGradient gradientTransform="rotate(90)" id="hoverOn">
+            <stop offset="0" stop-color="#c1c1c1"/>
+            <stop offset="0.5" stop-color="#aaaaaa"/>
+            <stop offset="1" stop-color="#c1c1c1"/>
+        </linearGradient>
+    </defs>
+  <path d="M35,5 20,5 5,25 20,45 35,45 20,25Z" fill="url(#hoverOn)" stroke="#a3a3a3" stroke-width="0.2" id="hoverOn"/>
+</svg>
