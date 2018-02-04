@@ -8,9 +8,9 @@
   <div class="detail-content" id="idNum<?php echo $productDetail['id'] ?>">
 
     <div class="detail-image">
-      <img class="change-prev-btn change-product" src="/material/navigate-left.png">
+      <img class="change-prev-btn change-product" src="/material/navigate-left.svg">
       <img class="product-image" src="image/<?php echo h($productDetail['name']) ?>.png">
-      <img class="change-next-btn change-product" src="/material/navigate-right.png">
+      <img class="change-next-btn change-product" src="/material/navigate-right.svg">
     </div>
 
     <div class="detail-info">

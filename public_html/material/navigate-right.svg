@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="50">
+    <style>
+    #change:hover {
+      fill :#999999;
+      stroke: black;
+      cursor: pointer;
+    }
+    #change:active {
+      fill: black;
+    }
+    </style>
+    <defs>
+        <linearGradient gradientTransform="rotate(90)" id="change">
+            <stop offset="0" stop-color="#c1c1c1"/>
+            <stop offset="0.5" stop-color="#dddddd"/>
+            <stop offset="1" stop-color="#c1c1c1"/>
+        </linearGradient>
+    </defs>
+    <path d="M5,5 20,5 35,25 20,45 5,45 20,25Z" fill="url(#change)" stroke="#a3a3a3" stroke-width="0.2" id="change"/>
+  </svg>
