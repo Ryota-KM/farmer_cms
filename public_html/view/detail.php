@@ -2,8 +2,6 @@
   require_once(dirname(__DIR__).'/view/shared/header.php');
   require_once '../public_html/functions.php';
 ?>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script type="text/javascript" src="/js/change-product.js"></script>
 
 <div class="contents">
 
@@ -44,5 +42,8 @@
   </div>
 <?php endforeach ?>
 </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="/js/change-product.js"></script>
 
 <?php require_once(dirname(__DIR__).'/view/shared/footer.php') ?>
