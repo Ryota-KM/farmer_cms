@@ -13,9 +13,9 @@
   }
 
   $_SESSION['product'][$id] =
-   [
-  	'name' => $_REQUEST['name'],
-  	'price' => $_REQUEST['price'],
+  [
+    'name' => $_REQUEST['name'],
+    'price' => $_REQUEST['price'],
     'quantity' => $_REQUEST['quantity'],
     'unit' => $_REQUEST['unit'],
   	'count' => $count + $_REQUEST['count']
