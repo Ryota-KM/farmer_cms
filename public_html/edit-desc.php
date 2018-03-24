@@ -2,10 +2,10 @@
   require_once(dirname(__DIR__).'/public_html/database.php');
   require_once(dirname(__DIR__).'/public_html/functions.php');
 
-  $name = trim($_REQUEST['name']);
-  $price = trim($_REQUEST['price']);
-  $comment = trim($_REQUEST['comment']);
-  $quantity = trim($_REQUEST['quantity']);
+  $name = mb_trim($_REQUEST['name']);
+  $price = mb_trim($_REQUEST['price']);
+  $comment = mb_trim($_REQUEST['comment']);
+  $quantity = mb_trim($_REQUEST['quantity']);
   $unit = $_REQUEST['unit'];
   $id = $_REQUEST['id'];
 
