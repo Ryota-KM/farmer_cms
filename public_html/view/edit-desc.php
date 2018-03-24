@@ -65,12 +65,12 @@
             <input type="text" class="price" name="price" value="<?php echo h($item['price']) ?>"
               maxlength="5" required> 円</span>
           <span>写真 :
-            <input type="file" id="file-num<?php echo $n ?>" class="file" name="file"></span></p>
+            <input type="file" id="file-num<?php echo $n ?>" class="file flag" name="file"></span></p>
           <div class="comment">
             <p>コメント : </br>(200字まで)</p>
           </div>
             <p><textarea maxlength="200" class="table rows="4" cols="50" name="comment" required><?php echo h($item['comment']) ?></textarea></p>
-          <img id="img-num<?php echo $n ?>" class="image" src="image/<?php echo h($item['name']) ?>.png">
+          <img id="img-num<?php echo $n ?>" class="image" src="image/<?php echo h($item['name']) ?>.png?v=<?php echo filemtime('image/'.$item["name"].'.png'); ?>">
           <p><input class="btn btn-update" type="submit" value="更新する"></p>
         </form>
         <form "onsubmit="return false;" action="edit-desc.php" method="post">
