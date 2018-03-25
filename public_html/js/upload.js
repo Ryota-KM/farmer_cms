@@ -10,7 +10,7 @@ $.ajax({
       reader.readAsDataURL(file);
     });
 
-    for(var i =1; i < 20; i++) {
+    for(var i =1; i < total; i++) {
       (function(j) {
         $('#file-num' + j).change(function(e){
           $("#img-num" + j).empty()

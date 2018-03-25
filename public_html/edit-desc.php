@@ -60,4 +60,13 @@
   $pdo = new PDO('mysql:host='.DB_HOST.'; dbname='.DB_NAME.'; charset=utf8', DB_USER, DB_PASSWORD);
   $sql = $pdo->query('select * from product order by id desc');
   $items = $sql->fetchAll();
-  require_once(dirname(__DIR__).'/public_html/view/edit-desc.php');
+
+  $total = $pdo->query('select count(*) from product');
+  $total = $total->fetchColumn();
+
+  ?>
+  <script type="text/javascript">
+  var total = '<?php echo $total + 1; ?>';
+  </script>
+
+  <?php require_once(dirname(__DIR__).'/public_html/view/edit-desc.php'); ?>
