@@ -10,7 +10,7 @@
 
     <div class="detail-image">
       <img class="change-prev-btn change-product" src="/material/navigate-left.svg">
-      <img class="product-image" src="image/<?php echo h($productDetail['name']) ?>.png">
+      <img class="product-image" src="image/<?php echo h($productDetail['name']) ?>.png?v=<?php echo filemtime('image/'.$productDetail["name"].'.png'); ?>">
       <img class="change-next-btn change-product" src="/material/navigate-right.svg">
     </div>
 
