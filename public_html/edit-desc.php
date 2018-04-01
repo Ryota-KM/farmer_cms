@@ -14,7 +14,7 @@
   if ($validated === true):
 
     if (isset($_REQUEST['newProduct'])) {
-      $insert = new PDO('mysql:host='.DB_HOST.'; dbname='.DB_NAME.'; charset=utf8', DB_USER, DB_PASSWORD);
+      $insert = new PDO(PDO_DSN, DB_USER, DB_PASSWORD, $options);
       $sqlInsert = $insert->prepare('insert into product value (null, ?,?,?,?,?)');
       $sqlInsert->execute([$name, $comment,
       mb_convert_kana($price,"n","utf-8"),
@@ -29,7 +29,7 @@
     }
 
     if (isset($_REQUEST['updateProduct'])) {
-      $update = new PDO('mysql:host='.DB_HOST.'; dbname='.DB_NAME.'; charset=utf8', DB_USER, DB_PASSWORD);
+      $update = new PDO(PDO_DSN, DB_USER, DB_PASSWORD, $options);
       $sqlUpdate = $update->prepare('update product set name=?, comment=?, quantity=?, unit=?, price=? where id=?');
       $sqlUpdate->execute([$name, $comment,
       mb_convert_kana($quantity, "n", "utf-8"),
@@ -45,9 +45,9 @@
     }
 
     if (isset($_REQUEST['deleteProduct'])) {
-      $delete = new PDO('mysql:host='.DB_HOST.'; dbname='.DB_NAME.'; charset=utf8', DB_USER, DB_PASSWORD);
-      $sqldelete = $delete->prepare('delete from product where id=?');
-      $sqldelete->execute([$_REQUEST['id']]);
+      $delete = new PDO(PDO_DSN, DB_USER, DB_PASSWORD, $options);
+      $sqlDelete = $delete->prepare('delete from product where id=?');
+      $sqlDelete->execute([$_REQUEST['id']]);
       $message = '<p>商品の登録を削除しました</p>';
     }
 
@@ -57,7 +57,7 @@
     $message = '';
   }
 
-  $pdo = new PDO('mysql:host='.DB_HOST.'; dbname='.DB_NAME.'; charset=utf8', DB_USER, DB_PASSWORD);
+  $pdo = new PDO(PDO_DSN, DB_USER, DB_PASSWORD, $options);
   $sql = $pdo->query('select * from product order by id desc');
   $items = $sql->fetchAll();
 
