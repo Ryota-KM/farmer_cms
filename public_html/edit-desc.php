@@ -8,19 +8,18 @@
   $quantity = mb_trim($_REQUEST['quantity']);
   $unit = $_REQUEST['unit'];
   $id = $_REQUEST['id'];
+  $sql = new PDO(PDO_DSN, DB_USER, DB_PASSWORD, $options);
 
   require_once(dirname(__DIR__).'/public_html/edit-validation.php');
 
   if ($validated === true):
 
     if (isset($_REQUEST['newProduct'])) {
-      $insert = new PDO(PDO_DSN, DB_USER, DB_PASSWORD, $options);
-      $sqlInsert = $insert->prepare('insert into product value (null, ?,?,?,?,?)');
+      $sqlInsert = $sql->prepare('insert into product value (null, ?,?,?,?,?)');
       $sqlInsert->execute([$name, $comment,
       mb_convert_kana($price,"n","utf-8"),
       mb_convert_kana($quantity,"n","utf-8"), $unit]);
       $message = '<p>新しい商品を追加しました。</p>';
-
         if (is_uploaded_file($_FILES['file']['tmp_name'])) {
           $file = 'image/'.basename($_FILES['file']['name']);
           move_uploaded_file($_FILES['file']['tmp_name'], $file);
@@ -29,14 +28,12 @@
     }
 
     if (isset($_REQUEST['updateProduct'])) {
-      $update = new PDO(PDO_DSN, DB_USER, DB_PASSWORD, $options);
-      $sqlUpdate = $update->prepare('update product set name=?, comment=?, quantity=?, unit=?, price=? where id=?');
+      $sqlUpdate = $sql->prepare('update product set name=?, comment=?, quantity=?, unit=?, price=? where id=?');
       $sqlUpdate->execute([$name, $comment,
       mb_convert_kana($quantity, "n", "utf-8"),
       $unit,
       mb_convert_kana($price,"n","utf-8"), $id]);
       $message = '<p>商品の情報を変更しました。</p>';
-
         if (is_uploaded_file($_FILES['file']['tmp_name'])) {
           $file = 'image/'.basename($_FILES['file']['name']);
           move_uploaded_file($_FILES['file']['tmp_name'], $file);
@@ -45,9 +42,8 @@
     }
 
     if (isset($_REQUEST['deleteProduct'])) {
-      $delete = new PDO(PDO_DSN, DB_USER, DB_PASSWORD, $options);
-      $sqlDelete = $delete->prepare('delete from product where id=?');
-      $sqlDelete->execute([$_REQUEST['id']]);
+      $sqldelete = $sql->prepare('delete from product where id=?');
+      $sqldelete->execute([$_REQUEST['id']]);
       $message = '<p>商品の登録を削除しました</p>';
     }
 
@@ -57,11 +53,10 @@
     $message = '';
   }
 
-  $pdo = new PDO(PDO_DSN, DB_USER, DB_PASSWORD, $options);
-  $sql = $pdo->query('select * from product order by id desc');
-  $items = $sql->fetchAll();
+  $sqlAll = $sql->query('select * from product order by id desc');
+  $items = $sqlAll->fetchAll();
 
-  $total = $pdo->query('select count(*) from product');
+  $total = $sql->query('select count(*) from product');
   $total = $total->fetchColumn();
 
   ?>
